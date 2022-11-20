@@ -1,0 +1,33 @@
+{
+  "name": "udemy-design-patterns",
+  "version": "1.0.0",
+  "description": "Learning in deep design patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --noWatch",
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\" --compiler typescript/bin/tsc",
+    "dev:file": "tsc-watch --onSuccess \"node ./dist/patterns/$npm_config_filename.js\" --compiler typescript/bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndresH1213/design-patterns-ts.git"
+  },
+  "keywords": [
+    "design",
+    "solid",
+    "code"
+  ],
+  "author": "Andres H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndresH1213/design-patterns-ts/issues"
+  },
+  "homepage": "https://github.com/AndresH1213/design-patterns-ts#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/prompt-sync": "^4.2.0",
+    "prompt-sync": "^4.2.0",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.8.4"
+  }
+}
