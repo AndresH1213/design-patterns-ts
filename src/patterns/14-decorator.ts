@@ -16,20 +16,16 @@ class Circle4 extends Shape1 {
   }
 }
 
-class ColoredShape extends Shape1 {
-  constructor(public shape: Shape, public color: string) {
-    super();
-  }
+class ColoredShape {
+  constructor(public shape: Shape1, public color: string) {}
 
   toString() {
     return `${this.shape.toString()} has the color ${this.color}`;
   }
 }
 
-class TransparentShape extends Shape1 {
-  constructor(public shape: Shape1, public transparency: number) {
-    super();
-  }
+class TransparentShape {
+  constructor(public shape: Shape1, public transparency: number) {}
   toString() {
     return `${this.shape.toString()} has ${
       this.transparency * 100.0
@@ -37,10 +33,10 @@ class TransparentShape extends Shape1 {
   }
 }
 
-let cirscle = new Circle4(2);
-console.log(cirscle.toString());
+let circle1 = new Circle4(2);
+console.log(circle1.toString());
 
-let redCircle = new ColoredShape(circle, 'red');
+let redCircle = new ColoredShape(circle1, 'red');
 console.log(redCircle.toString());
 
 let redHalfCircle = new TransparentShape(redCircle, 0.5);

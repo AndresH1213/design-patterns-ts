@@ -74,6 +74,7 @@ class EmployeeFactory {
   static serializer?: Serializer;
   static main: any;
   static aux: any;
+
   static _newEmployee(proto: Object, name: string, suite: number) {
     let copy = EmployeeFactory.serializer!.clone(proto);
     copy.name = name;

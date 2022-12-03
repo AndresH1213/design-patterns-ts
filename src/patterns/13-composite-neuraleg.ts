@@ -1,5 +1,5 @@
-//stackoverflow.com/questions/29879267/
-https: var aggregation = (baseClass, ...mixins) => {
+// https: //stackoverflow.com/questions/29879267/
+var aggregation = (baseClass, ...mixins) => {
   class base extends baseClass {
     constructor(...args) {
       super(...args);

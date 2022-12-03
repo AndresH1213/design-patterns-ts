@@ -54,7 +54,7 @@ class Console {
 }
 
 // so we're setting all the defaults to what most users will actually want,
-// but we are allowing users to gget all those power features. We are keeping
+// but we are allowing users to get all those power features. We are keeping
 // lists of both buffers and viewport. so if you wwant a multi buffer or
 // multiviewport console you can have it
 let c = new Console();
