@@ -2,11 +2,6 @@
 // html => <ul><li>hello</li></ul>
 // markdown => * hello * world
 
-enum OutputFormat {
-  markdown,
-  html,
-}
-
 abstract class ListStrategy {
   abstract start(buffer: string[]): void;
   end(buffer: string[]) {}
@@ -36,21 +31,12 @@ class HtmlListStrategy extends ListStrategy {
 
 class TextProcessor {
   public buffer: string[];
-  public listStrategy: ListStrategy;
-  constructor(outputFormat: OutputFormat) {
+  constructor(public listStrategy: ListStrategy) {
     this.buffer = [];
-    this.setOutputFormat(outputFormat);
   }
 
-  setOutputFormat(format: OutputFormat) {
-    switch (format) {
-      case OutputFormat.markdown:
-        this.listStrategy = new MarkdownListStrategy();
-        break;
-      case OutputFormat.html:
-        this.listStrategy = new HtmlListStrategy();
-        break;
-    }
+  setOutputFormat(listStrategy: ListStrategy) {
+    this.listStrategy = listStrategy;
   }
 
   appendList(items: string[]) {
@@ -72,11 +58,13 @@ class TextProcessor {
   }
 }
 
-let tp = new TextProcessor(OutputFormat.markdown);
+const markdownStrategy = new MarkdownListStrategy();
+let tp = new TextProcessor(markdownStrategy);
 tp.appendList(['foo', 'bar', 'baz']);
 console.log(tp.toString());
 
+const htmlStrategy = new HtmlListStrategy();
 tp.clear();
-tp.setOutputFormat(OutputFormat.html);
+tp.setOutputFormat(htmlStrategy);
 tp.appendList(['alpha', 'beta', 'gamma']);
 console.log(tp.toString());

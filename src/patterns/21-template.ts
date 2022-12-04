@@ -9,7 +9,7 @@ abstract class Game3 {
   }
 
   run() {
-    this.start!();
+    this.start();
     while (!this.haveWinner) {
       this.takeTurn();
     }

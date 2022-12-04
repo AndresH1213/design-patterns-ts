@@ -15,7 +15,7 @@ class Event_ {
     this.handlers.delete(idx);
   }
 
-  fire(sender: Creature, args) {
+  fire(sender: Creature, args: any) {
     this.handlers.forEach(function (v, k) {
       v(sender, args);
     });
@@ -47,8 +47,8 @@ class Game {
 }
 
 class Creature {
-  public initial_attack;
-  public initial_defense;
+  public initial_attack: number;
+  public initial_defense: number;
   constructor(
     public game: Game,
     public name: string,
