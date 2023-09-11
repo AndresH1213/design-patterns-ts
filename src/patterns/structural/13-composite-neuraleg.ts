@@ -47,7 +47,7 @@ class Connectable {
 }
 
 /**
- * The takewaya from this example is that you can successfully connect both
+ * The take away from this example is that you can successfully connect both
  * scalar objects and collection objects together if you can get the scalar
  * object to masquerade itself as if it were a collection. And that's exactly
  * what we're doing here. In the Neuron case is we're basicallly returning an

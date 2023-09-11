@@ -1,5 +1,3 @@
-// intrusive visitor
-
 interface Expression {
   print: (buffer: any[]) => void;
 }
