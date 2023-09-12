@@ -1,3 +1,8 @@
+enum StatType {
+  STRENGTH,
+  AGILITY,
+  INTELLIGENCE,
+}
 namespace IteratorArray {
   class Creature {
     public stats: any[];
@@ -8,27 +13,27 @@ namespace IteratorArray {
     }
 
     get strength() {
-      return this.stats[0];
+      return this.stats[StatType.STRENGTH];
     }
 
     set strength(value) {
-      this.stats[0] = value;
+      this.stats[StatType.STRENGTH] = value;
     }
 
     get agility() {
-      return this.stats[1];
+      return this.stats[StatType.AGILITY];
     }
 
     set agility(value) {
-      this.stats[1] = value;
+      this.stats[StatType.AGILITY] = value;
     }
 
     get intelligence() {
-      return this.stats[2];
+      return this.stats[StatType.INTELLIGENCE];
     }
 
     set intelligence(value) {
-      this.stats[2] = value;
+      this.stats[StatType.INTELLIGENCE] = value;
     }
 
     get sumOfStats() {

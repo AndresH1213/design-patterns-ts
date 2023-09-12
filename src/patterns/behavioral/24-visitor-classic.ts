@@ -18,17 +18,17 @@ namespace VisictorClassic {
     }
   }
 
-  class Visitor {
+  abstract class Visitor {
     buffer: any[];
     constructor() {
       this.buffer = [];
     }
 
-    visitNumber(e: NumberExpression) {}
-    visitAddition(e: AdditionExpression) {}
+    abstract visitNumber(e: NumberExpression): void;
+    abstract visitAddition(e: AdditionExpression): void;
   }
 
-  class ExpressionPrinter2 extends Visitor {
+  class ExpressionPrinter extends Visitor {
     constructor() {
       super();
     }
@@ -68,12 +68,11 @@ namespace VisictorClassic {
     }
   }
 
-  // 1 + (2+3)
   let e3 = new AdditionExpression(
     new NumberExpression(1),
-    new AdditionExpression(new NumberExpression(3), new NumberExpression(3))
+    new AdditionExpression(new NumberExpression(4), new NumberExpression(3))
   );
-  let ep2 = new ExpressionPrinter2();
+  let ep2 = new ExpressionPrinter();
   ep2.visitAddition(e3);
 
   let ec = new ExpressionCalculator();

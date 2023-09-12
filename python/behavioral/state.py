@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 class Context:
     """
-    The Context defines the interface of interst to clients. It also maintains
+    The Context defines the interface of interest to clients. It also maintains
     a reference to an instance of a State subclass, which represents the current
     state of the Context.
     """

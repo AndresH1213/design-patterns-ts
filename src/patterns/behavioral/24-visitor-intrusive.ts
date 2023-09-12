@@ -22,7 +22,6 @@ class AdditionExpression implements Expression {
   }
 }
 
-// 1 + (2+3)
 let e = new AdditionExpression(
   new NumberExpression(1),
   new AdditionExpression(new NumberExpression(2), new NumberExpression(3))
